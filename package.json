@@ -1,0 +1,22 @@
+{
+  "name": "newTab",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "gulp": "*",
+    "gulp-autoprefixer": "*",
+    "gulp-concat": "*",
+    "gulp-jshint": "^2.0.0",
+    "gulp-sass": "*",
+    "gulp-svg-sprite": "*",
+    "gulp-uglify": "*",
+    "gulp-util": "*",
+    "jshint": "^2.8.0"
+  },
+  "author": "",
+  "license": "ISC"
+}

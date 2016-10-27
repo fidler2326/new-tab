@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html ng-app="conjure">
+  <head>
+    <title>New Tab</title>
+
+    <script src="jquery/jquery.js"></script>
+    <script src="jquery/jquery-ui.min.js"></script>
+
+    <script src="angular/angular.min.js"></script>
+    <script src="angular/angular-local-storage.min.js"></script>
+
+    <script src="jquery/sortable.js"></script>
+    <script src="js/app.js"></script>
+
+    <script src="jquery/jquery.cookie.js"></script>
+
+    <script src="js/todos.js"></script>
+    <script src="js/bookmarks.js"></script>
+    <script src="js/modal.js"></script>
+
+    <script src="angular/directives/angular.editInPlace.js"></script>
+    <script src="angular/directives/angular.ngEnter.js"></script>
+
+    <script src="jquery/500px.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/app.css">
+  </head>
+<body>
+  <div class="wrapper">
+
+    <div class="page-wrapper">
+
+      <!-- <button type="button" class="btn-callback" data-toggle="modal" data-target="#myModal"><img src="images/settings_bottom.svg" class="bottom" /><img src="images/settings_top.svg" class="top" /></button> -->
+
+      <div class="weather">
+        <div class="result"> </div>
+      </div>
+
+      <div class="bookmark-trigger"></div>
+      <div class="favs-trigger"></div>
+
+      <!-- Clock tab -->
+      <div id="div1" class="content" style="display: block;">
+        <div class="flex-container">
+          <div class="flex-middle">
+            <div class="hello">
+              <p id="clock"></p>
+              <h2><span class="welcome"></span><span class="username"></span></h2>
+            </div>
+            <div class="new-user">
+              <p>Hello! Please enter your name:</p>
+              <div class="clearfix"></div>
+              <input id="username">
+              <a href="" class="btn-save">Save</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Todo tab -->
+      <div id="div2" class="content">
+        <div class="flex-container">
+          <div class="flex-middle">
+            <div ng-controller="TodoCtrl" ng-init="init()">
+              <div class="middle">
+                <div class="well todo-container">
+                  <input class="add-todo" placeholder="Todo..." type="text" ng-model="newTodo">
+                  <button class="btn btn-todo" ng-click="addTodo()">Add</button>
+                  <div class="clearfix"></div>
+                  <ul ui-sortable="todoSortable" ng-model="todos">
+                    <li ng-repeat="todo in todos">
+                      <input class="todo-checkbox" ng-model="todo.isDone" id="{{ 'object-' + $index }}" type="checkbox">
+                      <label for="{{ 'object-' + $index }}" class="todo-label"><span>&#10004;</span></label>
+                      <span>{{todo.taskName}}</span>
+                      <button class="delete" type="button" aria-hidden="true" ng-click="deleteTodo($index)">&#10005;</button>
+                    </li>
+                    <li ng-show="!todos.length" class="empty">
+                      <div class="alert success">
+                        Nothing to do!
+                      </div>
+                    </li>
+                  </ul>
+                  <div class="clearfix"></div>
+                  <!-- <div class="debug">
+                    <p class="text-info">{{ todos | json}}</p>
+                  </div> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Links -->
+      <!-- <div class="links-menu">
+        <li class="hide-menu"><a href="" class="showhidemenu">-</a></li>
+        <ul class="menu-show">
+
+          <div class="clearfix"></div>
+
+          <div ng-controller="BookmarkCtrl" ng-init="init()">
+            <div ui-sortable="todoSortable" ng-model="bookmarks">
+              <li ng-repeat="bookmark in bookmarks" class="bookmarks">
+                <a href="{{bookmark.bookmarkUrl}}"><img src="http://www.google.com/s2/favicons?domain={{bookmark.bookmarkUrl}}">{{bookmark.bookmarkName}}</a>
+                <button class="delete" type="button" aria-hidden="true" ng-click="deleteBookmark($index)">&#10005;</button>
+              </li>
+              <li ng-show="!bookmarks.length" class="empty">
+                <div class="alert info">
+                  Add some bookmarks!
+                </div>
+              </li>
+              <div class="clearfix"></div>
+
+              <div class="bookmarks-form">
+                <input type="text" placeholder="Title" ng-model="newBookmarkName">
+                <input type="text" placeholder="Url" ng-model="newBookmarkUrl">
+                <button class="bookmark" ng-click="addBookmark()">Add Bookmark</button>
+              </div>
+            </div>
+          </div>
+        </ul>
+      </div> -->
+
+    <!-- End of page-wrapper -->
+    </div>
+
+    <!-- Settings modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Settings</h4>
+          </div>
+          <div class="modal-body">
+             <h2>You</h2>
+            <label>Name:</label>
+            <input id="edit-username" type="text">
+            <a href="" class="btn btn-save" style="width: 100%; text-align: center;">Save</a>
+            <div class="clearfix"></div>
+            <h2 style="margin-top: 15px;">Tabs</h2>
+            <div class="clearfix"></div>
+            <label class="tab">Bookmarks:</label>
+            <div class="switch on" id="switch-links">
+              <input type="checkbox">
+            </div>
+            <div class="clearfix"></div>
+            <label class="tab">Weather:</label>
+            <div class="switch on" id="switch-weather">
+              <input type="checkbox">
+            </div>
+            <div class="clearfix" style="margin-bottom: 20px;"></div>
+            <h2>Data</h2>
+            <p style="margin: 0 0 5px 0;"><a href="" class="refresh-joke">Refresh</a> - (Get new joke and background image)</p>
+            <p><a href="" class="clear-data btn-danger">Clear all data</a> - (Warning: you will lose everything!!!)</p>
+          </div>
+          <div class="clearfix"></div>
+      </div>
+    </div>
+
+  <!-- End of wrapper -->
+  </div>
+
+  <!-- This needs to be last -->
+  <script src="js/last.js"></script>
+
+</body>
+</html>

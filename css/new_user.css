@@ -1,0 +1,39 @@
+.new-user p{
+	margin: 0 0 5px 0;
+	font-size: 28px;
+	color: #fff;
+	text-align: center;
+}
+
+.new-user a{
+	float: left;
+	width: 19%;
+	height: 40px;
+	line-height: 40px;
+	margin: 0 0 0 1%;
+	font-size: 16px;
+	background-color: #523c60;
+	color: #fff;
+	text-align: center;
+	transition: 0.3s;
+}
+
+.new-user a:hover{
+	background-color: #644a74;
+}
+
+.new-user a:hover{
+	text-decoration: none;
+}
+
+.new-user input{
+	float: left;
+	width: 80%;
+	height: 40px;
+	padding: 10px;
+	border: 0;
+}
+
+.new-user input:focus{
+	outline: 0;
+}

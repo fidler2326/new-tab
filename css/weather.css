@@ -1,0 +1,159 @@
+@font-face {
+	font-family: 'weather';
+	src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/93/artill_clean_icons-webfont.eot');
+	src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/93/artill_clean_icons-webfont.eot?#iefix') format('embedded-opentype'),
+	     url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/93/artill_clean_icons-webfont.woff') format('woff'),
+	     url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/93/artill_clean_icons-webfont.ttf') format('truetype'),
+	     url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/93/artill_clean_icons-webfont.svg#artill_clean_weather_iconsRg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+h2.weather-icon{
+	margin-bottom: -20px !important;
+}
+
+i{
+  color: #fff;
+  font-family: weather;
+  font-size: 100px;
+  font-weight: normal;
+  font-style: normal;
+  position: relative;
+  top: -10px;
+}
+
+.sunrise{
+	float: left;
+	font-size: 16px;
+	color: #fff;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+}
+
+.sunset{
+	float: right;
+	font-size: 16px;
+	color: #fff;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+}
+
+.icon-0:before { content: ":"; }
+.icon-1:before { content: "p"; }
+.icon-2:before { content: "S"; }
+.icon-3:before { content: "Q"; }
+.icon-4:before { content: "S"; }
+.icon-5:before { content: "W"; }
+.icon-6:before { content: "W"; }
+.icon-7:before { content: "W"; }
+.icon-8:before { content: "W"; }
+.icon-9:before { content: "I"; }
+.icon-10:before { content: "W"; }
+.icon-11:before { content: "I"; }
+.icon-12:before { content: "I"; }
+.icon-13:before { content: "I"; }
+.icon-14:before { content: "I"; }
+.icon-15:before { content: "W"; }
+.icon-16:before { content: "I"; }
+.icon-17:before { content: "W"; }
+.icon-18:before { content: "U"; }
+.icon-19:before { content: "Z"; }
+.icon-20:before { content: "Z"; }
+.icon-21:before { content: "Z"; }
+.icon-22:before { content: "Z"; }
+.icon-23:before { content: "Z"; }
+.icon-24:before { content: "E"; }
+.icon-25:before { content: "E"; }
+.icon-26:before { content: "3"; }
+.icon-27:before { content: "a"; }
+.icon-28:before { content: "A"; }
+.icon-29:before { content: "a"; }
+.icon-30:before { content: "A"; }
+.icon-31:before { content: "6"; }
+.icon-32:before { content: "1"; }
+.icon-33:before { content: "6"; }
+.icon-34:before { content: "1"; }
+.icon-35:before { content: "W"; }
+.icon-36:before { content: "1"; }
+.icon-37:before { content: "S"; }
+.icon-38:before { content: "S"; }
+.icon-39:before { content: "S"; }
+.icon-40:before { content: "M"; }
+.icon-41:before { content: "W"; }
+.icon-42:before { content: "I"; }
+.icon-43:before { content: "W"; }
+.icon-44:before { content: "a"; }
+.icon-45:before { content: "S"; }
+.icon-46:before { content: "U"; }
+.icon-47:before { content: "S"; }
+
+/* Loading animation */
+.spinner{
+  border-width: 4px;
+  border-style: solid;
+  border-color: #efefef;
+  border-right-color: transparent;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  -webkit-animation: spin 1s linear infinite;
+  animation: spin 1s linear infinite;
+}
+
+@-webkit-keyframes spin {
+	from { -webkit-transform: rotate(0deg); }
+	50%  { -webkit-transform: rotate(180deg); }
+	to   { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+	from { transform: rotate(0deg); }
+	50%  { transform: rotate(180deg); }
+	to   { transform: rotate(360deg); }
+}
+
+/* Weather new */
+
+.weather-container{
+	width: auto;
+	position: absolute;
+	top: 10px;
+	left: 10px;
+}
+
+.weather-container .left,
+.weather-container .right{
+	float: left;
+}
+
+.weather-container .right{
+	padding: 0 0 0 8px;
+}
+
+.weather-container h2,
+.weather-container h3{
+	margin: 0;
+	color: #fff;
+	font-size: 20px;
+	font-weight: 400;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+	text-align: left;
+}
+
+.weather-container h3{
+	margin: 0 0 5px 0;
+	padding: 0 0 5px 0;
+	border-bottom: 1px dotted #fff;
+}
+
+#weather{
+	position: relative;
+	transform: translate(-100%,0);
+	transition-timing-function: ease-in;
+	transition: 0.5s;
+}
+
+#weather.active{
+	transform: translate(0,0);
+}

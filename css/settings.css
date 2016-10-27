@@ -1,0 +1,120 @@
+.modal-content,
+.modal-dialog{
+	max-width: 400px !important;
+}
+
+.modal h4{
+	color: #333;
+	font-size: 22px;
+	font-weight: 300;	
+	text-shadow: none;
+}
+
+.modal h2{
+	margin: 0 0 10px 0;
+	padding: 0 0 10px 0;	
+	border-bottom: 1px dotted #eee;
+	font-size: 22px;
+	font-weight: 300;	
+}
+
+.modal label{
+	float: left;
+	line-height: 28px;
+	margin: 0 5px 0 0;
+}
+
+.modal input{
+	float: left;
+	width: auto;
+	height: 28px;
+	margin: 0 5px 10px 0;
+	padding: 10px;
+	font-size: 14px;
+}
+
+.modal .btn{
+	float: left;
+	width: auto !important;
+	height: 28px;
+	line-height: 28px;
+	padding: 0 10px;
+	font-size: 14px;
+}
+
+.modal input:focus{
+	outline: 0;
+}
+
+/* Tab switches */
+
+label.tab{
+	line-height: 26px;
+}
+
+.switch {
+	float: right;
+	margin: 0 0 0 10px;	
+	background: #E74C3C;
+	border-radius: 26px;
+	height: 26px;
+	margin: 0 160px 5px 0;
+	position: relative;
+	width: 40px;
+  cursor: pointer;
+	transition: background-color 0.3s ease-in-out;
+}
+.switch:after {
+	background: #fff;
+	border-radius: 100%;
+	content: " ";
+	display: block;
+	height: 22px;
+	left: 2px;
+	position: absolute;
+	top: 2px;
+	width: 22px;
+	transition: all 0.3s ease-in-out;
+}
+.switch > input {
+	display: none;
+}
+.switch.on {
+	background: #47d764;
+}
+.switch.on:after {
+	left: 16px;
+}
+
+.switch a{
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border-radius: 50px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+/* Data */
+
+.clear-data{
+	color: #E9573F;
+	font-size: 14px;
+}
+
+.clear-data:hover{
+	color: #FC6E51;
+	text-decoration: underline;
+}
+
+.refresh-joke{
+	color: #523c60;
+	font-size: 14px;
+}
+
+.refresh-joke:hover{
+	color: #644a74;
+	text-decoration: underline;
+}

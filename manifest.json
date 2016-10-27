@@ -1,0 +1,21 @@
+{
+  "name": "New Tab",
+  "description": "",
+  "version": "1.4",
+  "incognito": "split",
+  "permissions": [
+    "notifications",
+  	"tabs",
+  	"geolocation",
+    "webRequest",
+    "webRequestBlocking",
+    "http://query.yahooapis.com/",
+    "https://s3-us-west-2.amazonaws.com/",
+    "https://api.500px.com/"
+  ],
+  "chrome_url_overrides": {
+    "newtab": "layout.html"
+  },
+  "manifest_version": 2,
+  "content_security_policy": "script-src 'self' 'unsafe-eval' https://api.500px.com; http://query.yahooapis.com; https://s3-us-west-2.amazonaws.com; object-src 'self'"
+}
