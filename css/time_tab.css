@@ -1,16 +1,16 @@
 #clock{
 	width: auto;
-	line-height: 142px;
+	line-height: 112px;
 	margin: 0;
 	color: #fff;
 	font-family: 'Muli', sans-serif;
-	font-size: 162px;
+	font-size: 122px;
 	font-weight: 400;
 	text-align: center;
 	text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
 }
 
 .hello h2{
-	font-size: 92px !important;
+	font-size: 62px !important;
 	font-family: 'Muli', sans-serif;
 }

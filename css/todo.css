@@ -1,0 +1,8 @@
+.todo-list{
+  max-width: 240px;
+  height: 240px;
+  padding: 5px;
+  background-color: #fff;
+  position: absolute;
+  bottom: 0; right: 0;
+}
