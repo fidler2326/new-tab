@@ -1,38 +1,3 @@
-.bookmark-trigger {
-	width: 100px;
-	height: 100px;
-	position: absolute;
-	bottom: 0; right: 0;
-}
-.bookmark-trigger:after{
-  content: '';
-  width: 0;
-  height: 0;
-  border-top: 100px solid transparent;
-  border-right: 100px solid transparent;
-  border-right: 100px solid rgba(0,0,0,0.6);
-  position: absolute;
-  bottom: 0; right: 0;
-}
-
-.favs-trigger {
-	width: 100px;
-	height: 100px;
-	position: absolute;
-	bottom: 0; left: 0;
-}
-.favs-trigger:after{
-  content: '';
-  width: 0;
-  height: 0;
-  border-top: 100px solid transparent;
-  border-left: 100px solid transparent;
-  border-left: 100px solid rgba(0,0,0,0.6);
-  position: absolute;
-  bottom: 0; right: 0;
-}
-
-/* Weather container */
 .weather{
 	height: 80px;
 	padding: 0 20px 0 20px;

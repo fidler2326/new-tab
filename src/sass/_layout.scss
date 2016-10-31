@@ -1,3 +1,195 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body, html{
+	height: 100%;
+	min-height: 100%;
+}
+
 body{
-  display: none;
+	background-color: #eee;
+	box-shadow: inset 0 0 150px rgba(0,0,0,0.5);
+	font-family: 'Muli', sans-serif;
+	font-weight: 300;
+	overflow: hidden;
+	-webkit-animation: fadein 0.8s;
+	position: relative;
+}
+
+@-webkit-keyframes fadein{
+	from { opacity: 0; }
+	to   { opacity: 1; }
+}
+
+.clearfix{
+	clear: both;
+}
+
+.wrapper{
+	display: flex;
+	width: 100%;
+	height: 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+.page-wrapper{
+	width: 100%;
+	height: 100%;
+	position: relative;
+	left: 0;
+}
+
+.flex-container{
+	display: flex;
+	height: 100%;
+}
+
+.flex-middle{
+	margin: auto;
+}
+
+.debug{
+	margin-top: 20px;
+}
+
+hr{
+	width: 100%;
+	clear: both;
+	margin: 10px 0;
+	border-top: 1px solid #fff;
+	border-bottom: 0;
+}
+
+.middle{
+	width: 800px;
+	margin: 0 auto;
+}
+
+.well{
+	float: left;
+	width: 100%;
+	min-height: 300px;
+	max-height: 300px;
+	margin: 10px 0;
+	padding: 10px;
+	background-color: rgba(255,255,255,0.6);
+	overflow-y: scroll;
+}
+
+.content{
+	display: none;
+	width: 100%;
+	height: 100%;
+}
+
+.content.active{
+	-webkit-animation: fadein 0.5s;
+}
+
+.content h2, h3, h4{
+	color: #fff;
+	font-weight: 300;
+	text-align: center;
+}
+
+.content h2{
+	font-size: 58px;
+	margin: 0 0 20px 0;
+}
+
+.content h3{
+	font-size: 38px;
+}
+
+.content h4{
+	font-size: 18px;
+	text-transform: capitalize;
+}
+
+.new-user{
+	display: none;
+}
+
+/* Settings btn */
+
+.btn-callback{
+	width: 30px;
+	height: 30px;
+	background-color: transparent;
+	border: 0;
+	position: absolute;
+	right: 10px;
+	bottom: 10px;
+	z-index: 999;
+	cursor: pointer;
+	transition: 0.8s;
+}
+
+.btn-callback img.top{
+	width: 18px;
+	height: 18px;
+	position: absolute;
+	top: 0; left: 0;
+}
+
+.btn-callback img.bottom{
+	width: 14px;
+	height: 14px;
+	position: absolute;
+	bottom: 0; right: 0;
+}
+
+.btn-callback:hover img.top{
+	-webkit-animation: spin_top 5s linear infinite;
+}
+
+.btn-callback:hover img.bottom{
+	-webkit-animation: spin_top 3s linear reverse infinite;
+}
+
+@-webkit-keyframes spin_top {
+	from { -webkit-transform: rotate(0deg); }
+	50%  { -webkit-transform: rotate(180deg); }
+	to   { -webkit-transform: rotate(360deg); }
+}
+
+// Fonts
+// -----
+@import 'https://fonts.googleapis.com/css?family=Muli:300,400';
+
+a{
+	color: #434A54;
+	text-decoration: none;
+}
+
+a:hover{
+	text-decoration: underline;
+}
+
+a:focus, button:focus{
+	outline: 0;
+}
+
+// Clock / welcome message
+// -----------------------
+#clock{
+	width: auto;
+	line-height: 112px;
+	margin: 0;
+	color: #fff;
+	font-family: 'Muli', sans-serif;
+	font-size: 122px;
+	font-weight: 400;
+	text-align: center;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+}
+
+.hello h2{
+	font-size: 62px !important;
+	font-family: 'Muli', sans-serif;
 }

@@ -19,21 +19,16 @@
 
     <script src="jquery/500px.js"></script>
 
-    <link rel="stylesheet" type="text/css" href="css/app.css">
+    <link rel="stylesheet" type="text/css" href="src/css/app.css">
   </head>
 <body>
   <div class="wrapper">
 
     <div class="page-wrapper">
 
-      <!-- <button type="button" class="btn-callback" data-toggle="modal" data-target="#myModal"><img src="images/settings_bottom.svg" class="bottom" /><img src="images/settings_top.svg" class="top" /></button> -->
-
       <div class="weather">
         <div class="result"> </div>
       </div>
-
-      <!-- <div class="bookmark-trigger"></div>
-      <div class="favs-trigger"></div> -->
 
       <!-- Clock tab -->
       <div id="div1" class="content" style="display: block;">
@@ -73,40 +68,6 @@
       </div>
 
     </div> <!-- End of page-wrapper -->
-
-    <!-- Settings modal -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="myModalLabel">Settings</h4>
-          </div>
-          <div class="modal-body">
-             <h2>You</h2>
-            <label>Name:</label>
-            <input id="edit-username" type="text">
-            <a href="" class="btn btn-save" style="width: 100%; text-align: center;">Save</a>
-            <div class="clearfix"></div>
-            <h2 style="margin-top: 15px;">Tabs</h2>
-            <div class="clearfix"></div>
-            <label class="tab">Bookmarks:</label>
-            <div class="switch on" id="switch-links">
-              <input type="checkbox">
-            </div>
-            <div class="clearfix"></div>
-            <label class="tab">Weather:</label>
-            <div class="switch on" id="switch-weather">
-              <input type="checkbox">
-            </div>
-            <div class="clearfix" style="margin-bottom: 20px;"></div>
-            <h2>Data</h2>
-            <p style="margin: 0 0 5px 0;"><a href="" class="refresh-joke">Refresh</a> - (Get new joke and background image)</p>
-            <p><a href="" class="clear-data btn-danger">Clear all data</a> - (Warning: you will lose everything!!!)</p>
-          </div>
-          <div class="clearfix"></div>
-      </div>
-    </div>
 
   <!-- End of wrapper -->
   </div>
