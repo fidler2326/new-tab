@@ -1,14 +1,18 @@
-angular.module('newtab', []).controller('TodoListController', function($scope, localStorageService) {
+angular.module('newtab', []).controller('TodoListController', function() {
     var todoList = this;
+    console.log(JSON.parse(localStorage.getItem('todoItem')));
     todoList.todos = [
-      {text:'Todo #1', done:true},
-      {text:'Todo #2', done:false},
-      {text:'Todo #3', done:false},
-      {text:'Todo #4', done:false}
+
     ];
 
     todoList.addTodo = function() {
       todoList.todos.push({text:todoList.todoText, done:false});
+
+      var todoItems = todoList.todos;
+      console.log(todoItems)
+
+      localStorage.setItem('todoItem', JSON.stringify(todoItems));
+      console.log(localStorage.getItem('todoItem'));
       todoList.todoText = '';
     };
 

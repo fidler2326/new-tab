@@ -134,4 +134,4 @@ function updateClock() {
 //   });
 // });
 
-var App = angular.module("newtab", ["ui.sortable", "LocalStorageModule"]);
+var App = angular.module("newtab", []);

@@ -35,11 +35,11 @@
 /* Weather container */
 .weather{
 	height: 80px;
-	padding: 0 20px 0 0;
-	background-color: rgba(0,0,0,0.6);
+	padding: 0 20px 0 20px;
+	background-color: rgba(255,255,255,0.95);
 	position: absolute;
-	top: 0; right: 0;
-	transform: translateX(500%);
+	bottom: 0; left: 0;
+	transform: translateX(-500%);
 	transition: 0.5s ease;
 }
 .weather.active{ transform: translateX(0); }
@@ -48,10 +48,10 @@
   width: 0;
   height: 0;
   border-top: 80px solid transparent;
-  border-right: 80px solid transparent;
-  border-right: 80px solid rgba(0,0,0,0.6);
+  border-left: 80px solid transparent;
+  border-left: 80px solid rgba(255,255,255,0.95);
   position: absolute;
-  bottom: 0; left: -80px;
+  bottom: 0; right: -80px;
 }
 /* Weather inner */
 .weather .result{
@@ -62,11 +62,12 @@
 }
 .weather .temp{
 	display: inline-block;
-	color: #fff;
+	color: #333;
 	font-size: 32px;
+	font-weight: 600;
 	padding: 0 15px 0 0;
 }
 .text{
 	display: inline-block;
 }
-.weather h2,h3,h4{ color: #fff; text-align: left; }
+.weather h2,h3,h4{ color: #333; text-align: left; }
