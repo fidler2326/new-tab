@@ -116,22 +116,4 @@ function updateClock() {
   $('.welcome').text(msg);
 }
 
-// $(document).ready(function () {
-//   _500px.init({
-//     sdk_key: 'cc93dacd73abf08e14260dc56d76e0f7feab2b3f'
-//   });
-//
-//   _500px.api('/users/19193901/galleries/24034947/items', { image_size: 2048 }, function (response) {
-//       // console.log(response);
-//
-//       var images = response.data.photos;
-// 			var randomBgImage = images[Math.floor(Math.random()*images.length)];
-// 			var bgImage = randomBgImage.image_url;
-//
-//       console.log(bgImage);
-//
-//       $('.wrapper').css('background-image', 'url(' + image + ')');
-//   });
-// });
-
-var App = angular.module("newtab", []);
+var App = angular.module("newtab", ["LocalStorageModule"]);

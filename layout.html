@@ -54,51 +54,24 @@
       </div>
 
       <!-- Todo tab -->
-      <div class="todo-list" ng-controller="TodoListController as todoList">
-        <ul>
-          <li ng-repeat="todo in todoList.todos">
-            <input type="checkbox" ng-model="todo.done">
-            <span class="done-{{todo.done}}">{{todo.text}}</span>
+      <div class="todo-list" ng-controller="TodoListController as todoList" ng-init="init()">
+        <ul ui-sortable="todoSortable" ng-model="todos">
+          <li ng-repeat="todo in todos">
+            <input class="todo-checkbox" ng-model="todo.isDone" id="{{ 'object-' + $index }}" type="checkbox">
+            <label for="{{ 'object-' + $index }}" class="todo-label"></label>
+            <span>{{todo.taskName}}</span>
+            <button class="delete" type="button" aria-hidden="true" ng-click="deleteTodo($index)">&#10005;</button>
+          </li>
+          <li ng-show="!todos.length" class="empty">
+            Nothing to do :D
           </li>
         </ul>
-        <form ng-submit="todoList.addTodo()">
-          <input type="text" ng-model="todoList.todoText" size="30" placeholder="add new todo here">
-          <input class="btn-primary" type="submit" value="add">
+        <form ng-submit="addTodo()">
+          <input class="add-todo" placeholder="Add todo..." type="text" ng-model="newTodo">
         </form>
       </div>
 
-      <!-- Links -->
-      <!-- <div class="links-menu">
-        <li class="hide-menu"><a href="" class="showhidemenu">-</a></li>
-        <ul class="menu-show">
-
-          <div class="clearfix"></div>
-
-          <div ng-controller="BookmarkCtrl" ng-init="init()">
-            <div ui-sortable="todoSortable" ng-model="bookmarks">
-              <li ng-repeat="bookmark in bookmarks" class="bookmarks">
-                <a href="{{bookmark.bookmarkUrl}}"><img src="http://www.google.com/s2/favicons?domain={{bookmark.bookmarkUrl}}">{{bookmark.bookmarkName}}</a>
-                <button class="delete" type="button" aria-hidden="true" ng-click="deleteBookmark($index)">&#10005;</button>
-              </li>
-              <li ng-show="!bookmarks.length" class="empty">
-                <div class="alert info">
-                  Add some bookmarks!
-                </div>
-              </li>
-              <div class="clearfix"></div>
-
-              <div class="bookmarks-form">
-                <input type="text" placeholder="Title" ng-model="newBookmarkName">
-                <input type="text" placeholder="Url" ng-model="newBookmarkUrl">
-                <button class="bookmark" ng-click="addBookmark()">Add Bookmark</button>
-              </div>
-            </div>
-          </div>
-        </ul>
-      </div> -->
-
-    <!-- End of page-wrapper -->
-    </div>
+    </div> <!-- End of page-wrapper -->
 
     <!-- Settings modal -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
