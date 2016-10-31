@@ -54,14 +54,6 @@
   transition: 0.6s ease;
 }
 
-.todo-list form span:before{
-
-}
-
-.todo-list form span:after{
-
-}
-
 .todo-list input:focus + span:before,
 .todo-list input:focus + span:after{
   width: 50%;
