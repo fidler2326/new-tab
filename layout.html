@@ -15,7 +15,6 @@
     <script src="jquery/jquery.cookie.js"></script>
 
     <script src="js/todos.js"></script>
-    <script src="js/modal.js"></script>
 
     <script src="jquery/500px.js"></script>
 
@@ -26,29 +25,29 @@
 
     <div class="page-wrapper">
 
+      <!-- Weather -->
       <div class="weather">
-        <div class="result"> </div>
+        <div class="result"></div>
       </div>
 
-      <!-- Clock tab -->
-      <div id="div1" class="content" style="display: block;">
-        <div class="flex-container">
-          <div class="flex-middle">
-            <div class="hello">
-              <p id="clock"></p>
-              <h2><span class="welcome"></span><span class="username"></span></h2>
-            </div>
-            <div class="new-user">
-              <p>Hello! Please enter your name:</p>
-              <div class="clearfix"></div>
-              <input id="username">
-              <a href="" class="btn-save">Save</a>
-            </div>
+      <!-- Clock / welcome message -->
+      <div class="flex-container">
+        <div class="flex-middle">
+          <div class="hello">
+            <p id="clock"></p>
+            <h2><span class="welcome"></span><span class="username"></span></h2>
+          </div>
+          <div class="new-user">
+            <p>Hello! Please enter your name:</p>
+            <div class="clearfix"></div>
+            <input id="username">
+            <a href="" class="btn-save">Save</a>
           </div>
         </div>
       </div>
 
-      <!-- Todo tab -->
+
+      <!-- Todo list -->
       <div class="todo-list" ng-controller="TodoListController as todoList" ng-init="init()">
         <ul ui-sortable="todoSortable" ng-model="todos">
           <li ng-repeat="todo in todos">

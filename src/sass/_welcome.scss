@@ -1,0 +1,17 @@
+// Clock / welcome message
+// -----------------------
+.hello{
+	color: #fff;
+	font-family: 'Muli', sans-serif;
+	font-weight: 400;
+	text-align: center;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+	#clock{
+		width: auto;
+		margin: 0;
+		font-size: 122px;
+		line-height: 112px;
+		letter-spacing: -1px;
+	}
+	h2{ font-size: 62px; }
+}
