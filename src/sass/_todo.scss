@@ -18,8 +18,28 @@
     padding: 5px;
     overflow-y: scroll;
     li{
+      display: flex;
+      align-items: center;
+      margin: 5px 0 0 0;
+      padding: 0 5px 5px 0;
+      border-bottom: 1px dashed #aaa;
+      color: #333;
+      font-size: 13px;
+      font-weight: 400;
+      &.done{
+        span{ text-decoration: line-through; }
+      }
       &.empty{
         text-align: center;
+      }
+      span{
+        padding: 0 10px;
+      }
+      button{
+        margin-left: auto;
+        border: 0;
+        background-color: transparent;
+        cursor: pointer;
       }
     }
   }
@@ -27,7 +47,7 @@
 
 // Todo list scroll bar
 // --------------------
-.todo-list ul::-webkit-scrollbar{ width: 8px; }
+.todo-list ul::-webkit-scrollbar{ width: 6px; }
 .todo-list ul::-webkit-scrollbar-track{ background: #eee; }
 .todo-list ul::-webkit-scrollbar-thumb{ background: #aaa; }
 
@@ -61,7 +81,7 @@
       &:before,&:after{
         content: '';
         width: 0%; height: 2px;
-        background-color: #FFCE54;
+        background-color: #333;
         position: absolute;
         top: 0; left: 50%;
         transition: 0.6s ease;

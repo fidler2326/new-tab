@@ -39,13 +39,13 @@ App.controller("TodoListController", function ($scope, localStorageService) {
 
 function isChecked() {
   if($('input.todo-checkbox:checked').is(':checked')) {
-    $('input.todo-checkbox:checked').parent('li').css('text-decoration','line-through');
+    $('input.todo-checkbox:checked').parent('li').addClass('done');
     $('input.todo-checkbox:checked').next('label').addClass('active');
   }
 }
 
 function notChecked() {
-  $('input.todo-checkbox').not(':checked').parent('li').css('text-decoration','none');
+  $('input.todo-checkbox').not(':checked').parent('li').removeClass('done');
   $('input.todo-checkbox').not(':checked').next('label').removeClass('active');
 }
 
