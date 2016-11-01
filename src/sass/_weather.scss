@@ -6,33 +6,34 @@
 	bottom: 0; left: 0;
 	transform: translateX(-500%);
 	transition: 0.5s ease;
+	// Active state
+	&.active{ transform: translateX(0); }
+	// Triangle
+	&:after{
+		content: '';
+	  width: 0;
+	  height: 0;
+	  border-top: 80px solid transparent;
+	  border-left: 80px solid transparent;
+	  border-left: 80px solid rgba(255,255,255,0.95);
+	  position: absolute;
+	  bottom: 0; right: -80px;
+	}
+	// Fonts
+	h2,h3,h4{ color: #333; text-align: left; }
+	.result{
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		height: 100%;
+	}
+	.temp{
+		display: inline-block;
+		color: #333;
+		font-size: 32px;
+		font-weight: 600;
+		padding: 0 15px 0 0;
+	}
+	.text{ display: inline-block; }
+
 }
-.weather.active{ transform: translateX(0); }
-.weather:after{
-  content: '';
-  width: 0;
-  height: 0;
-  border-top: 80px solid transparent;
-  border-left: 80px solid transparent;
-  border-left: 80px solid rgba(255,255,255,0.95);
-  position: absolute;
-  bottom: 0; right: -80px;
-}
-/* Weather inner */
-.weather .result{
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	height: 100%;
-}
-.weather .temp{
-	display: inline-block;
-	color: #333;
-	font-size: 32px;
-	font-weight: 600;
-	padding: 0 15px 0 0;
-}
-.text{
-	display: inline-block;
-}
-.weather h2,h3,h4{ color: #333; text-align: left; }
