@@ -24,7 +24,6 @@ body{
 .clearfix{ clear: both; }
 
 .wrapper{
-	display: flex;
 	width: 100%;
 	height: 100%;
 	background-repeat: no-repeat;
@@ -33,22 +32,8 @@ body{
 }
 
 .page-wrapper{
-	width: 100%;
-	height: 100%;
-	position: relative;
-	left: 0;
-}
-
-.flex-container{
 	display: flex;
-	height: 100%;
-}
-
-.flex-middle{
-	margin: auto;
-}
-
-.middle{
-	width: 800px;
-	margin: 0 auto;
+	align-items: center;
+	justify-content: center;
+	width: 100%; height: 100%;
 }
