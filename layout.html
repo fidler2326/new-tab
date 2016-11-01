@@ -23,50 +23,43 @@
 <body>
   <div class="wrapper">
 
-    <!-- <div class="page-wrapper"> -->
+    <!-- Weather -->
+    <div class="weather">
+      <div class="result"></div>
+    </div>
 
-      <!-- Weather -->
-      <div class="weather">
-        <div class="result"></div>
+    <!-- Clock / welcome message -->
+    <div class="page-wrapper">
+      <div class="hello">
+        <p id="clock"></p>
+        <h2><span class="welcome"></span><span class="username"></span></h2>
       </div>
-
-      <!-- Clock / welcome message -->
-      <div class="page-wrapper">
-        <!-- <div class="flex-middle"> -->
-          <div class="hello">
-            <p id="clock"></p>
-            <h2><span class="welcome"></span><span class="username"></span></h2>
-          </div>
-          <div class="new-user">
-            <p>Hello! Please enter your name:</p>
-            <div class="clearfix"></div>
-            <input id="username">
-            <a href="" class="btn-save">Save</a>
-          </div>
-        <!-- </div> -->
+      <div class="new-user">
+        <p>Hello! Please enter your name:</p>
+        <div class="clearfix"></div>
+        <input id="username">
+        <a href="" class="btn-save">Save</a>
       </div>
+    </div>
 
-
-      <!-- Todo list -->
-      <div class="todo-list" ng-controller="TodoListController as todoList" ng-init="init()">
-        <ul ui-sortable="todoSortable" ng-model="todos">
-          <li ng-repeat="todo in todos">
-            <input class="todo-checkbox" ng-model="todo.isDone" id="{{ 'object-' + $index }}" type="checkbox">
-            <label for="{{ 'object-' + $index }}" class="todo-label"></label>
-            <span>{{todo.taskName}}</span>
-            <button class="delete" type="button" aria-hidden="true" ng-click="deleteTodo($index)">&#10005;</button>
-          </li>
-          <li ng-show="!todos.length" class="empty">
-            Nothing to do :D
-          </li>
-        </ul>
-        <form ng-submit="addTodo()">
-          <input class="add-todo" placeholder="Add todo..." type="text" ng-model="newTodo">
-          <span></span>
-        </form>
-      </div>
-
-    <!-- </div>  -->
+    <!-- Todo list -->
+    <div class="todo-list" ng-controller="TodoListController as todoList" ng-init="init()">
+      <ul ui-sortable="todoSortable" ng-model="todos">
+        <li ng-repeat="todo in todos">
+          <input class="todo-checkbox" ng-model="todo.isDone" id="{{ 'object-' + $index }}" type="checkbox">
+          <label for="{{ 'object-' + $index }}" class="todo-label"></label>
+          <span>{{todo.taskName}}</span>
+          <button class="delete" type="button" aria-hidden="true" ng-click="deleteTodo($index)">&#10005;</button>
+        </li>
+        <li ng-show="!todos.length" class="empty">
+          Nothing to do :D
+        </li>
+      </ul>
+      <form ng-submit="addTodo()">
+        <input class="add-todo" placeholder="Add todo..." type="text" ng-model="newTodo">
+        <span></span>
+      </form>
+    </div>
 
   <!-- End of wrapper -->
   </div>

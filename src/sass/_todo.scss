@@ -30,7 +30,8 @@
         span{ text-decoration: line-through; }
       }
       &.empty{
-        text-align: center;
+        border: 0;
+        justify-content: center;
       }
       span{
         padding: 0 10px;
