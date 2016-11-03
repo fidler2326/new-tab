@@ -7,24 +7,6 @@ $(document).ready(function(){
   // Date
   $('#date').text(today);
 
-  // Tabs
-  $(function() {
-    $('.btn-tab').click(function(){
-      $('.content').hide();
-      $('.content').removeClass('active');
-      $('.btn-tab').removeClass('active');
-      $(this).addClass('active');
-      $('#div'+$(this).attr('target')).show();
-      $('#div'+$(this).attr('target')).addClass('active');
-      return false;
-    });
-  });
-
-  // Apps link
-  $('.apps').click(function() {
-    chrome.tabs.create({url:'chrome://apps'});
-  });
-
   // Save username
   $('#username, #edit-username').keyup(function() {
     localStorage.setItem("username", $(this).val());
@@ -38,20 +20,6 @@ $(document).ready(function(){
 
   // Reload page (Refresh localstorage data)
   $('.btn-save').click(function(){
-    location.reload();
-  });
-
-  // Clear all localstorage
-  $('.clear-data').click(function(){
-    localStorage.clear();
-    $.removeCookie('newday');
-    $.removeCookie('horology');
-    location.reload();
-  });
-
-  // Refresh joke of the day (Clear cookie)
-  $('.refresh-joke').click(function(){
-    $.removeCookie('newday');
     location.reload();
   });
 
@@ -81,8 +49,6 @@ var monthIndex = date.getMonth();
 var year = date.getFullYear();
 
 var today = day + ' ' + monthNames[monthIndex] + ' ' + year;
-
-console.log(today);
 
 function updateClock() {
   var currentTime = new Date();
