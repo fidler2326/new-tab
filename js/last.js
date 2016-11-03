@@ -40,6 +40,7 @@ $(document).ready(function(){
 
 	if ($.cookie('weather')) {
 		setWether();
+		$('.weather').css('transition','none');
 	} else {
 		getWeather();
 	}
