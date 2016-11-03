@@ -38,25 +38,51 @@ if ($.cookie('newday')) {
 
 $(document).ready(function(){
 
+	if ($.cookie('weather')) {
+		setWether();
+	} else {
+		getWeather();
+	}
+
+});
+
+function getWeather() {
+
 	// Get weather forecast for current location
 	navigator.geolocation.getCurrentPosition(function(position) {
-
 		$.get('https://query.yahooapis.com/v1/public/yql?q=select * from weather.forecast ' +
 				'where woeid in (SELECT woeid FROM geo.places WHERE text="('+position.coords.latitude + ',' + position.coords.longitude+')") and u="c"&format=json', function (data) {
-			console.log(data);
 
-			var html = '<span class="temp">' + data.query.results.channel.item.condition.temp + data.query.results.channel.units.temperature + '</span>';
-			html += '<span class="text">';
-			html += '<h2>' + data.query.results.channel.location.city + ', ' + data.query.results.channel.location.country + '</h2>';
-			html += '<h3>' + data.query.results.channel.item.forecast[0].text + '</h3>';
-			html += '<h4>' + 'Sunrise: ' + data.query.results.channel.astronomy.sunrise + ' / Sunset: ' + data.query.results.channel.astronomy.sunset + '</h4>';
-			html += '</span>';
+			// Save weather details to local storage
+			localStorage.setItem("temp", data.query.results.channel.item.condition.temp);
+			localStorage.setItem("unit", data.query.results.channel.units.temperature);
+			localStorage.setItem("city", data.query.results.channel.location.city);
+			localStorage.setItem("country", data.query.results.channel.location.country);
+			localStorage.setItem("forecast", data.query.results.channel.item.forecast[0].text);
+			localStorage.setItem("sunrise", data.query.results.channel.astronomy.sunrise);
+			localStorage.setItem("sunset", data.query.results.channel.astronomy.sunset);
 
-			$('.weather').addClass('active');
-
-			$('.weather .result').append(html);
-
+			setWether();
 		});
 	});
 
-});
+	// Set cookie to expire after 1 hour
+	var expirationDate = new Date();
+	var minutes = 30;
+	expirationDate.setTime(expirationDate.getTime() + (minutes * 60 * 1000));
+	$.cookie("weather", "6", {expires: expirationDate});
+
+}
+
+function setWether() {
+	var html = '<span class="temp">' + localStorage.getItem("temp") + localStorage.getItem("unit") + '</span>';
+	html += '<span class="text">';
+	html += '<h2>' + localStorage.getItem("city") + ', ' + localStorage.getItem("country") + '</h2>';
+	html += '<h3>' + localStorage.getItem("forecast") + '</h3>';
+	html += '<h4>' + 'Sunrise: ' + localStorage.getItem("sunrise") + ' / Sunset: ' + localStorage.getItem("sunset") + '</h4>';
+	html += '</span>';
+
+	$('.weather').addClass('active');
+
+	$('.weather .result').append(html);
+}
