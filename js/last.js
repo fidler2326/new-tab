@@ -7,7 +7,7 @@ function imageOfTheDay() {
     sdk_key: 'cc93dacd73abf08e14260dc56d76e0f7feab2b3f'
   });
 
-  _500px.api('/users/19193901/galleries/24034947/items', { image_size: 2048 }, function (response) {
+  _500px.api('/users/19193901/galleries/24034947/items', { image_size: 2048, rpp: 100 }, function (response) {
       console.log(response);
 
 			var images = response.data.photos;
@@ -16,6 +16,7 @@ function imageOfTheDay() {
 
       $('.wrapper').css('background-image', 'url(' + bgImage + ')');
 			localStorage.setItem("bg-image", bgImage);
+			console.log(response);
   });
 }
 
