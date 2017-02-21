@@ -7,8 +7,7 @@ function imageOfTheDay() {
     sdk_key: 'cc93dacd73abf08e14260dc56d76e0f7feab2b3f'
   });
 
-  _500px.api('/users/19193901/galleries/24034947/items', { image_size: 2048, rpp: 100 }, function (response) {
-      console.log(response);
+  _500px.api('/users/19193901/galleries/24034947/items', { image_size: 2048, rpp: 100, }, function (response) {
 
 			var images = response.data.photos;
 			var randomBgImage = images[Math.floor(Math.random()*images.length)];
@@ -16,7 +15,6 @@ function imageOfTheDay() {
 
       $('.wrapper').css('background-image', 'url(' + bgImage + ')');
 			localStorage.setItem("bg-image", bgImage);
-			console.log(response);
   });
 }
 
@@ -38,14 +36,12 @@ if ($.cookie('newday')) {
 }
 
 $(document).ready(function(){
-
 	if ($.cookie('weather')) {
 		setWether();
 		$('.weather').css('transition','none');
 	} else {
 		getWeather();
 	}
-
 });
 
 function getWeather() {
@@ -88,3 +84,9 @@ function setWether() {
 
 	$('.weather .result').append(html);
 }
+
+// Refresh image
+// -------------
+$('.btn-refresh').click(function(){
+	imageOfTheDay();
+});
