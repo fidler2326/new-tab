@@ -8,17 +8,6 @@
 	transition: 0.5s ease;
 	// Active state
 	&.active{ transform: translateX(0); }
-	// Triangle
-	&:after{
-		content: '';
-	  width: 0;
-	  height: 0;
-	  border-top: 80px solid transparent;
-	  border-left: 80px solid transparent;
-	  border-left: 80px solid rgba(255,255,255,0.95);
-	  position: absolute;
-	  bottom: 0; right: -80px;
-	}
 	// Fonts
 	h2,h3,h4{ color: #333; text-align: left; }
 	.result{
@@ -35,5 +24,11 @@
 		padding: 0 15px 0 0;
 	}
 	.text{ display: inline-block; }
+}
 
+sup{
+	padding: 0 1px;
+	font-size: 16px;
+	position: relative;
+	top: 7px;
 }
